@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/market"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/market" />
+
+    <item
+        android:id="@+id/converter"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_workouts_24"
+        android:title="@string/converter" />
+
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_profile_24"
+        android:title="@string/profile" />
+</menu>

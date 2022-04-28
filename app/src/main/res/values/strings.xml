@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Finance App</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="icon">icon</string>
+    <string name="home_all_caps">HOME</string>
+    <string name="market_all_caps">MARKET</string>
+    <string name="profile_all_caps">PROFILE</string>
+    <string name="home">Home</string>
+    <string name="market">Market</string>
+    <string name="profile">Profile</string>
+    <string name="converter">Converter</string>
+    <string name="converter_all_caps">CONVERTER</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="test_user">Test User</string>
+    <string name="free_member">Free Member</string>
+    <string name="go_pro">Go pro</string>
+    <string name="my_data">My data</string>
+    <string name="settings">Settings</string>
+    <string name="invite_a_friend">Invite a friend</string>
+    <string name="log_out">Log out</string>
+</resources>
