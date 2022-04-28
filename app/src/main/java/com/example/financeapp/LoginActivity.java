@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.financeapp.api.ApiClient;
+import com.example.financeapp.constants.Constants;
 import com.example.financeapp.models.User;
 import com.example.financeapp.services.UserService;
 import com.google.android.material.textfield.TextInputEditText;
@@ -30,11 +31,11 @@ public class LoginActivity extends AppCompatActivity {
         TextInputEditText tfUsername = findViewById(R.id.tfUsername);
         TextInputEditText tfPassword = findViewById(R.id.tfPassword);
 
-        UserService userService = ApiClient.getInstance().create(UserService.class);
+        UserService userService = ApiClient.getInstance(Constants.baseUrlDatabase).create(UserService.class);
 
         btLoginButton.setOnClickListener(view -> {
-            System.out.println(ApiClient.getInstance());
-            System.out.println(ApiClient.getInstance());
+            System.out.println(ApiClient.getInstance(Constants.baseUrlDatabase));
+            System.out.println(ApiClient.getInstance(Constants.baseUrlDatabase));
             String usernameGiven = Objects.requireNonNull(tfUsername.getText()).toString();
             String passwordGiven = Objects.requireNonNull(tfPassword.getText()).toString();
             Call<User> user = userService.getUserByUsername(usernameGiven);

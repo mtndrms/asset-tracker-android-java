@@ -4,18 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     tools:context=".ConverterFragment">
 
-    <TextView
-        android:id="@+id/tvThisWeek"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFEFEF"
+            app:layout_constraintTop_toBottomOf="@id/test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </LinearLayout>
+    <Spinner
+        android:id="@+id/spFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:contentDescription="@string/app_name"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        android:background="@drawable/style_spinner"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="50dp" />
+
+    <EditText
+        android:id="@+id/tvFromAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
-        android:text="deneme2"
+        android:layout_marginTop="75dp"
+        android:autofillHints=""
         android:textColor="@color/text_color"
-        android:textSize="40sp"
+        android:hint="@string/_000_00"
+        android:inputType="numberDecimal"
+        android:textColorHint="#FFEFEF"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/spFrom" />
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/ibChangeSides"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/ic_baseline_currency_exchange_24"-->
+<!--        android:backgroundTint="@color/background"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvFromAmount"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/tvToAmount"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:contentDescription="@string/change_side" />-->
+
+    <TextView
+        android:id="@+id/tvToAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:hint="@string/_000_00"
+        android:textColorHint="@color/background"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@id/spTo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:contentDescription="@string/app_name"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        android:background="@drawable/style_spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="50dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
