@@ -10,32 +10,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <FrameLayout
             android:id="@+id/test"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/background"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#FFEFEF"
-            app:layout_constraintTop_toBottomOf="@id/test"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/test" />
     </LinearLayout>
+
     <Spinner
         android:id="@+id/spFrom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
+        android:background="@drawable/style_spinner_light"
         android:contentDescription="@string/app_name"
         android:minHeight="48dp"
         android:spinnerMode="dialog"
-        android:background="@drawable/style_spinner"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="50dp" />
 
@@ -43,34 +46,54 @@
         android:id="@+id/tvFromAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="50dp"
         android:autofillHints=""
-        android:textColor="@color/text_color"
+        android:background="@color/background"
         android:hint="@string/_000_00"
         android:inputType="numberDecimal"
+        android:textColor="@color/text_color"
         android:textColorHint="#FFEFEF"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spFrom" />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/ibChangeSides"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/ic_baseline_currency_exchange_24"-->
-<!--        android:backgroundTint="@color/background"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/tvFromAmount"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/tvToAmount"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:contentDescription="@string/change_side" />-->
+    <LinearLayout
+        android:id="@+id/llChangeSides"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/tvToAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFromAmount">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_arrow_circle_down_24"
+            android:backgroundTint="#FFEFEF"
+            android:clickable="false"
+            android:contentDescription="@string/change_side" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_arrow_circle_down_24"
+            android:backgroundTint="@color/background"
+            android:contentDescription="@string/change_side"
+            android:clickable="false"
+            android:rotation="180" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvToAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="75dp"
+        android:layout_marginBottom="50dp"
         android:hint="@string/_000_00"
         android:textColorHint="@color/background"
         android:textSize="48sp"
@@ -83,10 +106,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
+        android:background="@drawable/style_spinner_dark"
         android:contentDescription="@string/app_name"
         android:minHeight="48dp"
         android:spinnerMode="dialog"
-        android:background="@drawable/style_spinner"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="50dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
